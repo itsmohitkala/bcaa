@@ -765,763 +765,1065 @@ app.use(express.json());
 
 // `;
 
-const programs = `
-DATA STRUCTURES PRACTICAL PROGRAMS (TURBO C++)
-Each program is separate. Save and run one program at a time.
+// const programsDS = `
+// DATA STRUCTURES PRACTICAL PROGRAMS (TURBO C++)
+// Each program is separate. Save and run one program at a time.
 
+// // ==========================================
+// // PROGRAM 1: TRAVERSING AN ARRAY
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[5], i;
+
+//     cout<<"Enter 5 elements:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     cout<<"Traversing the array:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cout<<"arr["<<i<<"]="<<arr[i]<<endl;
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 2: LINEAR SEARCH
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[5], i, item, found=0;
+
+//     cout<<"Enter 5 elements:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     cout<<"Enter element to search: ";
+//     cin>>item;
+
+//     for(i=0; i<5; i++)
+//     {
+//         if(arr[i]==item)
+//         {
+//             found=1;
+//             break;
+//         }
+//     }
+
+//     if(found==1)
+//     {
+//         cout<<"Element found at position "<<i+1;
+//     }
+//     else
+//     {
+//         cout<<"Element not found";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 3: BINARY SEARCH
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[5], i, item;
+//     int low=0, high=4, mid, found=0;
+
+//     cout<<"Enter 5 sorted elements:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     cout<<"Enter element to search: ";
+//     cin>>item;
+
+//     while(low<=high)
+//     {
+//         mid=(low+high)/2;
+
+//         if(arr[mid]==item)
+//         {
+//             found=1;
+//             break;
+//         }
+//         else if(arr[mid]<item)
+//         {
+//             low=mid+1;
+//         }
+//         else
+//         {
+//             high=mid-1;
+//         }
+//     }
+
+//     if(found==1)
+//     {
+//         cout<<"Element found at position "<<mid+1;
+//     }
+//     else
+//     {
+//         cout<<"Element not found";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 4: INSERTION IN AN ARRAY
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[10], i, n, pos, item;
+
+//     cout<<"Enter number of elements: ";
+//     cin>>n;
+
+//     cout<<"Enter array elements:"<<endl;
+
+//     for(i=0; i<n; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     cout<<"Enter element to insert: ";
+//     cin>>item;
+
+//     cout<<"Enter position: ";
+//     cin>>pos;
+
+//     for(i=n; i>=pos; i--)
+//     {
+//         arr[i]=arr[i-1];
+//     }
+
+//     arr[pos-1]=item;
+//     n++;
+
+//     cout<<"Array after insertion:"<<endl;
+
+//     for(i=0; i<n; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 5: DELETION FROM AN ARRAY
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[10], i, n, pos;
+
+//     cout<<"Enter number of elements: ";
+//     cin>>n;
+
+//     cout<<"Enter array elements:"<<endl;
+
+//     for(i=0; i<n; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     cout<<"Enter position to delete: ";
+//     cin>>pos;
+
+//     for(i=pos-1; i<n-1; i++)
+//     {
+//         arr[i]=arr[i+1];
+//     }
+
+//     n--;
+
+//     cout<<"Array after deletion:"<<endl;
+
+//     for(i=0; i<n; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 6: BUBBLE SORT (ASCENDING)
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[5], i, j, temp;
+
+//     cout<<"Enter 5 elements:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     for(i=0; i<4; i++)
+//     {
+//         for(j=0; j<4-i; j++)
+//         {
+//             if(arr[j]>arr[j+1])
+//             {
+//                 temp=arr[j];
+//                 arr[j]=arr[j+1];
+//                 arr[j+1]=temp;
+//             }
+//         }
+//     }
+
+//     cout<<"Sorted array:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 7: BUBBLE SORT (DESCENDING)
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[5], i, j, temp;
+
+//     cout<<"Enter 5 elements:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     for(i=0; i<4; i++)
+//     {
+//         for(j=0; j<4-i; j++)
+//         {
+//             if(arr[j]<arr[j+1])
+//             {
+//                 temp=arr[j];
+//                 arr[j]=arr[j+1];
+//                 arr[j+1]=temp;
+//             }
+//         }
+//     }
+
+//     cout<<"Sorted array:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 8: SELECTION SORT
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// void main()
+// {
+//     clrscr();
+
+//     int arr[5], i, j, min, temp;
+
+//     cout<<"Enter 5 elements:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cin>>arr[i];
+//     }
+
+//     for(i=0; i<4; i++)
+//     {
+//         min=i;
+
+//         for(j=i+1; j<5; j++)
+//         {
+//             if(arr[j]<arr[min])
+//             {
+//                 min=j;
+//             }
+//         }
+
+//         temp=arr[i];
+//         arr[i]=arr[min];
+//         arr[min]=temp;
+//     }
+
+//     cout<<"Sorted array:"<<endl;
+
+//     for(i=0; i<5; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 9: SINGLY LINKED LIST
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+// #include<alloc.h>
+
+// struct node
+// {
+//     int data;
+//     node *next;
+// };
+
+// node *head=NULL;
+
+// void create()
+// {
+//     node *temp, *newnode;
+//     int i, n;
+
+//     cout<<"Enter number of nodes: ";
+//     cin>>n;
+
+//     for(i=0; i<n; i++)
+//     {
+//         newnode=(node*)malloc(sizeof(node));
+
+//         cout<<"Enter data: ";
+//         cin>>newnode->data;
+
+//         newnode->next=NULL;
+
+//         if(head==NULL)
+//         {
+//             head=newnode;
+//         }
+//         else
+//         {
+//             temp=head;
+
+//             while(temp->next!=NULL)
+//             {
+//                 temp=temp->next;
+//             }
+
+//             temp->next=newnode;
+//         }
+//     }
+// }
+
+// void display()
+// {
+//     node *temp=head;
+
+//     if(head==NULL)
+//     {
+//         cout<<"List is empty";
+//         return;
+//     }
+
+//     while(temp!=NULL)
+//     {
+//         cout<<temp->data<<" ";
+//         temp=temp->next;
+//     }
+// }
+
+// void insert()
+// {
+//     node *newnode, *temp;
+//     int pos, i;
+
+//     newnode=(node*)malloc(sizeof(node));
+
+//     cout<<"Enter data: ";
+//     cin>>newnode->data;
+
+//     cout<<"Enter position: ";
+//     cin>>pos;
+
+//     if(pos==1)
+//     {
+//         newnode->next=head;
+//         head=newnode;
+//     }
+//     else
+//     {
+//         temp=head;
+
+//         for(i=1; i<pos-1; i++)
+//         {
+//             temp=temp->next;
+//         }
+
+//         newnode->next=temp->next;
+//         temp->next=newnode;
+//     }
+// }
+
+// void deletion()
+// {
+//     node *temp, *del;
+//     int pos, i;
+
+//     cout<<"Enter position to delete: ";
+//     cin>>pos;
+
+//     if(pos==1)
+//     {
+//         del=head;
+//         head=head->next;
+//         free(del);
+//     }
+//     else
+//     {
+//         temp=head;
+
+//         for(i=1; i<pos-1; i++)
+//         {
+//             temp=temp->next;
+//         }
+
+//         del=temp->next;
+//         temp->next=del->next;
+
+//         free(del);
+//     }
+// }
+
+// void main()
+// {
+//     clrscr();
+
+//     create();
+
+//     cout<<"Linked list: ";
+//     display();
+
+//     insert();
+
+//     cout<<"\nAfter insertion: ";
+//     display();
+
+//     deletion();
+
+//     cout<<"\nAfter deletion: ";
+//     display();
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 10: DOUBLY LINKED LIST
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+// #include<alloc.h>
+
+// struct node
+// {
+//     int data;
+//     node *prev;
+//     node *next;
+// };
+
+// node *head=NULL;
+
+// void create()
+// {
+//     node *newnode, *temp;
+//     int n, i;
+
+//     cout<<"Enter number of nodes: ";
+//     cin>>n;
+
+//     for(i=0; i<n; i++)
+//     {
+//         newnode=(node*)malloc(sizeof(node));
+
+//         cout<<"Enter data: ";
+//         cin>>newnode->data;
+
+//         newnode->prev=NULL;
+//         newnode->next=NULL;
+
+//         if(head==NULL)
+//         {
+//             head=newnode;
+//         }
+//         else
+//         {
+//             temp=head;
+
+//             while(temp->next!=NULL)
+//             {
+//                 temp=temp->next;
+//             }
+
+//             temp->next=newnode;
+//             newnode->prev=temp;
+//         }
+//     }
+// }
+
+// void display()
+// {
+//     node *temp=head;
+
+//     cout<<"Doubly linked list:"<<endl;
+
+//     while(temp!=NULL)
+//     {
+//         cout<<temp->data<<" ";
+//         temp=temp->next;
+//     }
+// }
+
+// void main()
+// {
+//     clrscr();
+
+//     create();
+//     display();
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 11: STACK OPERATIONS
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// int stack[5];
+// int top=-1;
+
+// void push()
+// {
+//     int item;
+
+//     if(top==4)
+//     {
+//         cout<<"Stack Overflow";
+//     }
+//     else
+//     {
+//         cout<<"Enter element: ";
+//         cin>>item;
+
+//         top++;
+//         stack[top]=item;
+//     }
+// }
+
+// void pop()
+// {
+//     if(top==-1)
+//     {
+//         cout<<"Stack Underflow";
+//     }
+//     else
+//     {
+//         cout<<"Deleted element: "<<stack[top];
+//         top--;
+//     }
+// }
+
+// void display()
+// {
+//     int i;
+
+//     if(top==-1)
+//     {
+//         cout<<"Stack is empty";
+//     }
+//     else
+//     {
+//         cout<<"Stack elements:"<<endl;
+
+//         for(i=top; i>=0; i--)
+//         {
+//             cout<<stack[i]<<endl;
+//         }
+//     }
+// }
+
+// void main()
+// {
+//     clrscr();
+
+//     push();
+//     push();
+//     push();
+
+//     display();
+
+//     pop();
+
+//     cout<<"\nAfter pop:"<<endl;
+
+//     display();
+
+//     getch();
+// }
+
+
+// // ==========================================
+// // PROGRAM 12: QUEUE OPERATIONS
+// // ==========================================
+
+// #include<iostream.h>
+// #include<conio.h>
+
+// int queue[5];
+// int front=-1;
+// int rear=-1;
+
+// void insert()
+// {
+//     int item;
+
+//     if(rear==4)
+//     {
+//         cout<<"Queue Overflow";
+//     }
+//     else
+//     {
+//         cout<<"Enter element: ";
+//         cin>>item;
+
+//         if(front==-1)
+//         {
+//             front=0;
+//         }
+
+//         rear++;
+//         queue[rear]=item;
+//     }
+// }
+
+// void deletion()
+// {
+//     if(front==-1 || front>rear)
+//     {
+//         cout<<"Queue Underflow";
+//     }
+//     else
+//     {
+//         cout<<"Deleted element: "<<queue[front];
+
+//         front++;
+//     }
+// }
+
+// void display()
+// {
+//     int i;
+
+//     if(front==-1 || front>rear)
+//     {
+//         cout<<"Queue is empty";
+//     }
+//     else
+//     {
+//         cout<<"Queue elements:"<<endl;
+
+//         for(i=front; i<=rear; i++)
+//         {
+//             cout<<queue[i]<<" ";
+//         }
+//     }
+// }
+
+// void main()
+// {
+//     clrscr();
+
+//     insert();
+//     insert();
+//     insert();
+
+//     display();
+
+//     deletion();
+
+//     cout<<"\nAfter deletion:"<<endl;
+
+//     display();
+
+//     getch();
+// }
+// `
+
+
+const programs= `
 // ==========================================
-// PROGRAM 1: TRAVERSING AN ARRAY
+// PROGRAM 1: BISECTION METHOD
+// Function: f(x) = x^3 - x - 1
 // ==========================================
 
 #include<iostream.h>
 #include<conio.h>
+#include<math.h>
+
+double f(double x)
+{
+    return x*x*x - x - 1;
+}
 
 void main()
 {
     clrscr();
 
-    int arr[5], i;
+    double a, b, c, tol;
+    int i, max;
 
-    cout<<"Enter 5 elements:"<<endl;
+    cout<<"Enter a and b: ";
+    cin>>a>>b;
 
-    for(i=0; i<5; i++)
+    cout<<"Enter tolerance: ";
+    cin>>tol;
+
+    cout<<"Enter maximum iterations: ";
+    cin>>max;
+
+    if(f(a)==0)
     {
-        cin>>arr[i];
-    }
-
-    cout<<"Traversing the array:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cout<<"arr["<<i<<"]="<<arr[i]<<endl;
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 2: LINEAR SEARCH
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[5], i, item, found=0;
-
-    cout<<"Enter 5 elements:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cin>>arr[i];
-    }
-
-    cout<<"Enter element to search: ";
-    cin>>item;
-
-    for(i=0; i<5; i++)
-    {
-        if(arr[i]==item)
-        {
-            found=1;
-            break;
-        }
-    }
-
-    if(found==1)
-    {
-        cout<<"Element found at position "<<i+1;
-    }
-    else
-    {
-        cout<<"Element not found";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 3: BINARY SEARCH
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[5], i, item;
-    int low=0, high=4, mid, found=0;
-
-    cout<<"Enter 5 sorted elements:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cin>>arr[i];
-    }
-
-    cout<<"Enter element to search: ";
-    cin>>item;
-
-    while(low<=high)
-    {
-        mid=(low+high)/2;
-
-        if(arr[mid]==item)
-        {
-            found=1;
-            break;
-        }
-        else if(arr[mid]<item)
-        {
-            low=mid+1;
-        }
-        else
-        {
-            high=mid-1;
-        }
-    }
-
-    if(found==1)
-    {
-        cout<<"Element found at position "<<mid+1;
-    }
-    else
-    {
-        cout<<"Element not found";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 4: INSERTION IN AN ARRAY
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[10], i, n, pos, item;
-
-    cout<<"Enter number of elements: ";
-    cin>>n;
-
-    cout<<"Enter array elements:"<<endl;
-
-    for(i=0; i<n; i++)
-    {
-        cin>>arr[i];
-    }
-
-    cout<<"Enter element to insert: ";
-    cin>>item;
-
-    cout<<"Enter position: ";
-    cin>>pos;
-
-    for(i=n; i>=pos; i--)
-    {
-        arr[i]=arr[i-1];
-    }
-
-    arr[pos-1]=item;
-    n++;
-
-    cout<<"Array after insertion:"<<endl;
-
-    for(i=0; i<n; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 5: DELETION FROM AN ARRAY
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[10], i, n, pos;
-
-    cout<<"Enter number of elements: ";
-    cin>>n;
-
-    cout<<"Enter array elements:"<<endl;
-
-    for(i=0; i<n; i++)
-    {
-        cin>>arr[i];
-    }
-
-    cout<<"Enter position to delete: ";
-    cin>>pos;
-
-    for(i=pos-1; i<n-1; i++)
-    {
-        arr[i]=arr[i+1];
-    }
-
-    n--;
-
-    cout<<"Array after deletion:"<<endl;
-
-    for(i=0; i<n; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 6: BUBBLE SORT (ASCENDING)
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[5], i, j, temp;
-
-    cout<<"Enter 5 elements:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cin>>arr[i];
-    }
-
-    for(i=0; i<4; i++)
-    {
-        for(j=0; j<4-i; j++)
-        {
-            if(arr[j]>arr[j+1])
-            {
-                temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-
-    cout<<"Sorted array:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 7: BUBBLE SORT (DESCENDING)
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[5], i, j, temp;
-
-    cout<<"Enter 5 elements:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cin>>arr[i];
-    }
-
-    for(i=0; i<4; i++)
-    {
-        for(j=0; j<4-i; j++)
-        {
-            if(arr[j]<arr[j+1])
-            {
-                temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-
-    cout<<"Sorted array:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 8: SELECTION SORT
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-
-void main()
-{
-    clrscr();
-
-    int arr[5], i, j, min, temp;
-
-    cout<<"Enter 5 elements:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cin>>arr[i];
-    }
-
-    for(i=0; i<4; i++)
-    {
-        min=i;
-
-        for(j=i+1; j<5; j++)
-        {
-            if(arr[j]<arr[min])
-            {
-                min=j;
-            }
-        }
-
-        temp=arr[i];
-        arr[i]=arr[min];
-        arr[min]=temp;
-    }
-
-    cout<<"Sorted array:"<<endl;
-
-    for(i=0; i<5; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-
-    getch();
-}
-
-
-// ==========================================
-// PROGRAM 9: SINGLY LINKED LIST
-// ==========================================
-
-#include<iostream.h>
-#include<conio.h>
-#include<alloc.h>
-
-struct node
-{
-    int data;
-    node *next;
-};
-
-node *head=NULL;
-
-void create()
-{
-    node *temp, *newnode;
-    int i, n;
-
-    cout<<"Enter number of nodes: ";
-    cin>>n;
-
-    for(i=0; i<n; i++)
-    {
-        newnode=(node*)malloc(sizeof(node));
-
-        cout<<"Enter data: ";
-        cin>>newnode->data;
-
-        newnode->next=NULL;
-
-        if(head==NULL)
-        {
-            head=newnode;
-        }
-        else
-        {
-            temp=head;
-
-            while(temp->next!=NULL)
-            {
-                temp=temp->next;
-            }
-
-            temp->next=newnode;
-        }
-    }
-}
-
-void display()
-{
-    node *temp=head;
-
-    if(head==NULL)
-    {
-        cout<<"List is empty";
+        cout<<"Root = "<<a;
+        getch();
         return;
     }
 
-    while(temp!=NULL)
+    if(f(b)==0)
     {
-        cout<<temp->data<<" ";
-        temp=temp->next;
+        cout<<"Root = "<<b;
+        getch();
+        return;
     }
-}
 
-void insert()
-{
-    node *newnode, *temp;
-    int pos, i;
-
-    newnode=(node*)malloc(sizeof(node));
-
-    cout<<"Enter data: ";
-    cin>>newnode->data;
-
-    cout<<"Enter position: ";
-    cin>>pos;
-
-    if(pos==1)
+    if(f(a)*f(b)>0)
     {
-        newnode->next=head;
-        head=newnode;
+        cout<<"Invalid interval! No sign change.";
+        getch();
+        return;
     }
-    else
+
+    for(i=1; i<=max; i++)
     {
-        temp=head;
+        c=(a+b)/2.0;
 
-        for(i=1; i<pos-1; i++)
-        {
-            temp=temp->next;
-        }
+        if(fabs(f(c))<tol || fabs(b-a)<tol)
+            break;
 
-        newnode->next=temp->next;
-        temp->next=newnode;
+        if(f(a)*f(c)<0)
+            b=c;
+        else
+            a=c;
     }
-}
 
-void deletion()
-{
-    node *temp, *del;
-    int pos, i;
-
-    cout<<"Enter position to delete: ";
-    cin>>pos;
-
-    if(pos==1)
-    {
-        del=head;
-        head=head->next;
-        free(del);
-    }
-    else
-    {
-        temp=head;
-
-        for(i=1; i<pos-1; i++)
-        {
-            temp=temp->next;
-        }
-
-        del=temp->next;
-        temp->next=del->next;
-
-        free(del);
-    }
-}
-
-void main()
-{
-    clrscr();
-
-    create();
-
-    cout<<"Linked list: ";
-    display();
-
-    insert();
-
-    cout<<"\nAfter insertion: ";
-    display();
-
-    deletion();
-
-    cout<<"\nAfter deletion: ";
-    display();
+    cout<<"\nApproximate Root = "<<c;
+    cout<<"\nIterations = "<<i;
 
     getch();
 }
 
 
 // ==========================================
-// PROGRAM 10: DOUBLY LINKED LIST
+// PROGRAM 2: NEWTON-RAPHSON METHOD
+// Function: f(x) = x^3 - x - 1
+// Derivative: f'(x) = 3x^2 - 1
 // ==========================================
 
 #include<iostream.h>
 #include<conio.h>
-#include<alloc.h>
+#include<math.h>
 
-struct node
+double f(double x)
 {
-    int data;
-    node *prev;
-    node *next;
-};
+    return x*x*x - x - 1;
+}
 
-node *head=NULL;
-
-void create()
+double df(double x)
 {
-    node *newnode, *temp;
+    return 3*x*x - 1;
+}
+
+void main()
+{
+    clrscr();
+
+    double x, next, tol;
+    int i, max;
+
+    cout<<"Enter initial guess: ";
+    cin>>x;
+
+    cout<<"Enter tolerance: ";
+    cin>>tol;
+
+    cout<<"Enter maximum iterations: ";
+    cin>>max;
+
+    if(max<=0 || tol<=0)
+    {
+        cout<<"Invalid tolerance or iterations.";
+        getch();
+        return;
+    }
+
+    for(i=1; i<=max; i++)
+    {
+        if(fabs(df(x))<0.0000000001)
+        {
+            cout<<"Derivative is too small.";
+            getch();
+            return;
+        }
+
+        next=x-f(x)/df(x);
+
+        if(fabs(next-x)<tol || fabs(f(next))<tol)
+            break;
+
+        x=next;
+    }
+
+    cout<<"\nApproximate Root = "<<next;
+    cout<<"\nIterations = "<<i;
+
+    getch();
+}
+
+
+// ==========================================
+// PROGRAM 3: SIMPSON'S 1/3 RULE
+// Function: f(x) = x^2
+// ==========================================
+
+#include<iostream.h>
+#include<conio.h>
+
+double f(double x)
+{
+    return x*x;
+}
+
+void main()
+{
+    clrscr();
+
+    double a, b, h, sum, result;
     int n, i;
 
-    cout<<"Enter number of nodes: ";
+    cout<<"Enter lower limit: ";
+    cin>>a;
+
+    cout<<"Enter upper limit: ";
+    cin>>b;
+
+    cout<<"Enter number of subintervals: ";
     cin>>n;
 
-    for(i=0; i<n; i++)
+    if(n<=0 || n%2!=0)
     {
-        newnode=(node*)malloc(sizeof(node));
+        cout<<"n must be a positive even number.";
+        getch();
+        return;
+    }
 
-        cout<<"Enter data: ";
-        cin>>newnode->data;
+    h=(b-a)/n;
+    sum=f(a)+f(b);
 
-        newnode->prev=NULL;
-        newnode->next=NULL;
-
-        if(head==NULL)
-        {
-            head=newnode;
-        }
+    for(i=1; i<n; i++)
+    {
+        if(i%2==0)
+            sum=sum+2*f(a+i*h);
         else
-        {
-            temp=head;
-
-            while(temp->next!=NULL)
-            {
-                temp=temp->next;
-            }
-
-            temp->next=newnode;
-            newnode->prev=temp;
-        }
+            sum=sum+4*f(a+i*h);
     }
-}
 
-void display()
-{
-    node *temp=head;
+    result=(h/3.0)*sum;
 
-    cout<<"Doubly linked list:"<<endl;
-
-    while(temp!=NULL)
-    {
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }
-}
-
-void main()
-{
-    clrscr();
-
-    create();
-    display();
+    cout<<"\nIntegration = "<<result;
 
     getch();
 }
 
 
 // ==========================================
-// PROGRAM 11: STACK OPERATIONS
+// PROGRAM 4: TRAPEZOIDAL RULE
+// Function: f(x) = x^2
 // ==========================================
 
 #include<iostream.h>
 #include<conio.h>
 
-int stack[5];
-int top=-1;
-
-void push()
+double f(double x)
 {
-    int item;
-
-    if(top==4)
-    {
-        cout<<"Stack Overflow";
-    }
-    else
-    {
-        cout<<"Enter element: ";
-        cin>>item;
-
-        top++;
-        stack[top]=item;
-    }
-}
-
-void pop()
-{
-    if(top==-1)
-    {
-        cout<<"Stack Underflow";
-    }
-    else
-    {
-        cout<<"Deleted element: "<<stack[top];
-        top--;
-    }
-}
-
-void display()
-{
-    int i;
-
-    if(top==-1)
-    {
-        cout<<"Stack is empty";
-    }
-    else
-    {
-        cout<<"Stack elements:"<<endl;
-
-        for(i=top; i>=0; i--)
-        {
-            cout<<stack[i]<<endl;
-        }
-    }
+    return x*x;
 }
 
 void main()
 {
     clrscr();
 
-    push();
-    push();
-    push();
+    double a, b, h, sum, result;
+    int n, i;
 
-    display();
+    cout<<"Enter lower limit: ";
+    cin>>a;
 
-    pop();
+    cout<<"Enter upper limit: ";
+    cin>>b;
 
-    cout<<"\nAfter pop:"<<endl;
+    cout<<"Enter number of subintervals: ";
+    cin>>n;
 
-    display();
+    if(n<=0)
+    {
+        cout<<"n must be positive.";
+        getch();
+        return;
+    }
+
+    h=(b-a)/n;
+    sum=f(a)+f(b);
+
+    for(i=1; i<n; i++)
+    {
+        sum=sum+2*f(a+i*h);
+    }
+
+    result=(h/2.0)*sum;
+
+    cout<<"\nIntegration = "<<result;
 
     getch();
 }
 
 
 // ==========================================
-// PROGRAM 12: QUEUE OPERATIONS
+// PROGRAM 5: SIMPSON'S 3/8 RULE
+// Function: f(x) = x^2
 // ==========================================
 
 #include<iostream.h>
 #include<conio.h>
 
-int queue[5];
-int front=-1;
-int rear=-1;
-
-void insert()
+double f(double x)
 {
-    int item;
-
-    if(rear==4)
-    {
-        cout<<"Queue Overflow";
-    }
-    else
-    {
-        cout<<"Enter element: ";
-        cin>>item;
-
-        if(front==-1)
-        {
-            front=0;
-        }
-
-        rear++;
-        queue[rear]=item;
-    }
-}
-
-void deletion()
-{
-    if(front==-1 || front>rear)
-    {
-        cout<<"Queue Underflow";
-    }
-    else
-    {
-        cout<<"Deleted element: "<<queue[front];
-
-        front++;
-    }
-}
-
-void display()
-{
-    int i;
-
-    if(front==-1 || front>rear)
-    {
-        cout<<"Queue is empty";
-    }
-    else
-    {
-        cout<<"Queue elements:"<<endl;
-
-        for(i=front; i<=rear; i++)
-        {
-            cout<<queue[i]<<" ";
-        }
-    }
+    return x*x;
 }
 
 void main()
 {
     clrscr();
 
-    insert();
-    insert();
-    insert();
+    double a, b, h, sum, result;
+    int n, i;
 
-    display();
+    cout<<"Enter lower limit: ";
+    cin>>a;
 
-    deletion();
+    cout<<"Enter upper limit: ";
+    cin>>b;
 
-    cout<<"\nAfter deletion:"<<endl;
+    cout<<"Enter number of subintervals: ";
+    cin>>n;
 
-    display();
+    if(n<=0 || n%3!=0)
+    {
+        cout<<"n must be a positive multiple of 3.";
+        getch();
+        return;
+    }
+
+    h=(b-a)/n;
+    sum=f(a)+f(b);
+
+    for(i=1; i<n; i++)
+    {
+        if(i%3==0)
+            sum=sum+2*f(a+i*h);
+        else
+            sum=sum+3*f(a+i*h);
+    }
+
+    result=(3.0*h/8.0)*sum;
+
+    cout<<"\nIntegration = "<<result;
 
     getch();
 }
